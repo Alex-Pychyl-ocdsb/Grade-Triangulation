@@ -14,9 +14,9 @@ import java.sql.*;
  */
 public class DatabaseConnection {
     public static Connection init() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mariadb.cj.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(
-                "jdbc:mariadb://localhost:3006/gradetriangulation"
+                "jdbc:mysql://localhost:3006/gradetriangulation"
               , "root"
               , "admin");
     }
