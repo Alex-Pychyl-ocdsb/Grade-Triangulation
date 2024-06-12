@@ -72,7 +72,6 @@ public class NewAssignment extends PrivateServlet {
                  && !request.getParameter("criterium" + i).isEmpty()
                  && request.getParameter("type" + i) != null
                  && !request.getParameter("type" + i).isEmpty(); i++) {
-            System.err.println(request.getParameter("type" + i));
             if (names.contains(request.getParameter("criterium" + i).toLowerCase())) {
                 continue;
             }

@@ -70,9 +70,9 @@ public class Students extends PrivateServlet {
                 students += makeStudent(result);
             }
             if (students.isEmpty()) {
-                students = "</table>You do not have any students. <button onclick='window.location = \"/new-student\"'>Add some now.</button>";
+                students = "</table>You do not have any students. <button class=\"important-button\" onclick='window.location = \"/new-student\"'>Add some now.</button>";
             } else {
-                students += "</table><button onclick='window.location = \"/new-student\"'>Add a student</button>";
+                students += "</table><button class=\"important-button\" onclick='window.location = \"/new-student\"'>Add a student</button>";
             }
             request.setAttribute("students", students);
         } catch (SQLException | ClassNotFoundException e) {

@@ -17,9 +17,18 @@
         <h1>Add a new student</h1>
         <form action="new-student" method="post">
             Student Name (First then last): <br>
-            <input type="text" name="firstName" required><input type="text" name="lastName" required><br>
-            <input type="submit" value="Add">
+            <input type="text" name="firstName" size="10" onkeyup="resizeInput(this)" required>
+            <input type="text" name="lastName" size="10" onkeyup="resizeInput(this)" required><br>
+            <input class="important-button" type="submit" value="Add">
         </form>
     </center>
+    <script>
+        function resizeInput(input) {
+            if (input.value.length < 10)
+                input.size = 10;
+            else
+                input.size = input.value.length;
+        }
+    </script>
     </body>
 </html>

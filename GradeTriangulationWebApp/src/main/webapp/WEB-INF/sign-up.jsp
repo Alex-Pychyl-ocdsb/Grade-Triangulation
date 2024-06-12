@@ -9,7 +9,7 @@
 <html>
     <link rel="stylesheet" href="/styles/login.css" type="text/css">
     <head>
-        <title>Log In</title>
+        <title>Sign Up</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>

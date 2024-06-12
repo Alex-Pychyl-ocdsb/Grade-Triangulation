@@ -35,3 +35,12 @@ button {
 button:hover {
     background-color: #eee;
 }
+
+.important-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.important-button:hover {
+    background-color: #0056b3;
+}

@@ -22,7 +22,7 @@
             Type of assignment:
             <input type="text" name="type" required> <br>
             Name:
-            <input type="text" name="name"> <br>
+            <input type="text" name="name"> <br><br>
             Criteria:
             <table name="criteria"
                    id="criteria">
@@ -45,7 +45,7 @@
             </table>
             <input type="button" onclick="addRow()" value="Add Criterium">
             <br><%=request.getAttribute("message")%><br>
-            <input type="submit" value="Create Assignment">
+            <input class='important-button' type="submit" value="Create Assignment">
         </form>
     </center>
     <script>

@@ -42,9 +42,9 @@ public class Classes extends PrivateServlet {
                 classes += makeClass(result);
             }
             if (classes.isEmpty()) {
-                classes = "You do not have any classes. <button onclick='window.location = \"/new-class\"'>Create one now.</button>";
+                classes = "You do not have any classes. <button class='important-button' onclick='window.location = \"/new-class\"'>Create one now.</button>";
             } else {
-                classes += "<br><button onclick='window.location = \"/new-class\"'>Create new class</button>";
+                classes += "<br><button class='important-button' onclick='window.location = \"/new-class\"'>Create new class</button>";
             }
             request.setAttribute("classes", classes);
         } catch (SQLException | ClassNotFoundException e) {

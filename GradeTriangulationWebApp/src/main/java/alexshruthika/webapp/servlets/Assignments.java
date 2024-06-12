@@ -70,9 +70,9 @@ public class Assignments extends PrivateServlet {
                 assignments += makeAssignment(result);
             }
             if (assignments.isEmpty()) {
-                assignments = "You do not have any assignments. <button onclick='window.location = \"/new-assignment\"'>Create one now.</button>";
+                assignments = "You do not have any assignments. <button class='important-button' onclick='window.location = \"/new-assignment\"'>Create one now.</button>";
             } else {
-                assignments += "<br><button onclick='window.location = \"/new-assignment\"'>Create new assignment</button>";
+                assignments += "<br><button class='important-button' onclick='window.location = \"/new-assignment\"'>Create new assignment</button>";
             }
             request.setAttribute("assignments", assignments);
         } catch (SQLException | ClassNotFoundException e) {

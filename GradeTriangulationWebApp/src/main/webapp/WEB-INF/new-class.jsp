@@ -40,7 +40,7 @@ Firstname Lastname..."
                           cols="40" rows="4"></textarea>
                           
                 <p><%=request.getAttribute("message")%></p>
-                <button type="submit" name="create">Create</button>
+                <button class="important-button" type="submit" name="create">Create</button>
             </form>
         </div>
     </center>
