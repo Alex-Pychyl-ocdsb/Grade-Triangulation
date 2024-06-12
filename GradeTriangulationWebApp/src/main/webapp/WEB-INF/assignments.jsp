@@ -15,7 +15,10 @@
     <body>
     <center>
         <h1><%=request.getAttribute("classInfo")%></h1>
-        <%=request.getAttribute("assignments")%>
+        <div class="assignments">
+            <%=request.getAttribute("assignments")%>
+        </div>
+        <%=request.getAttribute("newButton")%>
     </center>
     </body>
 </html>

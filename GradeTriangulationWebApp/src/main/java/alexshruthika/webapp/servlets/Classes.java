@@ -31,7 +31,7 @@ public class Classes extends PrivateServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String classes = "";
+        String classes = "<div style='width: 60%'>";
         response.setContentType("text/html;charset=UTF-8");
         try {
             PreparedStatement st = DatabaseConnection.init().prepareStatement(
@@ -41,6 +41,7 @@ public class Classes extends PrivateServlet {
             while (result.next()) {
                 classes += makeClass(result);
             }
+            classes += "</div>";
             if (classes.isEmpty()) {
                 classes = "You do not have any classes. <button class='important-button' onclick='window.location = \"/new-class\"'>Create one now.</button>";
             } else {
@@ -54,14 +55,15 @@ public class Classes extends PrivateServlet {
     }
     
     private String makeClass(ResultSet result) throws SQLException {
-        return result.getString("course_code") + ","
-                + result.getInt("year") + ","
-                + "S" + result.getInt("semester") + ","
-                + "P" + result.getInt("period") + "<br>"
-              + "<button onclick=\"goToClass(\'" + result.getInt("id")
-                  + "', '/assignments')\">assignments</button>"
-              + "<button onclick=\"goToClass('" + result.getInt("id")
-                  + "', '/students')\">students</button><br><br>";
+        return "<div class='class-info' align='left'>"
+             + result.getString("course_code") + "<span style='float:right'>"
+             + result.getInt("year") + "</span><br>"
+             + "Semester " + result.getInt("semester") + "<span style='float:right'>"
+             + "Period " + result.getInt("period") + "</span><br>"
+             + "<button onclick=\"goToClass(\'" + result.getInt("id")
+             + "', '/assignments')\">assignments</button>&nbsp&nbsp&nbsp"
+             + "<button onclick=\"goToClass('" + result.getInt("id")
+                  + "', '/students')\">students</button></div>";
     }
 
     /**

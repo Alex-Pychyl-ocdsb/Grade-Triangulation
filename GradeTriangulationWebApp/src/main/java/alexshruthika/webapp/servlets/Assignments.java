@@ -69,12 +69,14 @@ public class Assignments extends PrivateServlet {
             while (result.next()) {
                 assignments += makeAssignment(result);
             }
-            if (assignments.isEmpty()) {
-                assignments = "You do not have any assignments. <button class='important-button' onclick='window.location = \"/new-assignment\"'>Create one now.</button>";
-            } else {
-                assignments += "<br><button class='important-button' onclick='window.location = \"/new-assignment\"'>Create new assignment</button>";
-            }
             request.setAttribute("assignments", assignments);
+            if (assignments.isEmpty()) {
+                request.setAttribute("newButton", "You do not have any assignments."
+                                                + "<button class='important-button' onclick='window.location = \"/new-assignment\"'>Create one now.</button>");
+            } else {
+                request.setAttribute("newButton", "<button class='important-button' onclick='window.location = \"/new-assignment\"'>Create new assignment</button>");
+            }
+            
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("Error: " + e);
         }

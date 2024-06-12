@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" href="/styles/generic.css" type="text/css">
+    <link rel="stylesheet" href="/styles/classes.css" type="text/css">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Your Classes</title>
