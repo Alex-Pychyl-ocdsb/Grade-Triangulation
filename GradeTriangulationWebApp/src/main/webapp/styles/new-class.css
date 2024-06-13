@@ -1,0 +1,80 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 12, 2024, 9:01:01 a.m.
+    Author     : alexp
+*/
+
+body {
+    height: 100vh;
+    background-color: #f7f9fc;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+/*input[type="text"] {
+    padding: 12px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+}*/
+.class-form {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 33%;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    text-align: center;
+}
+
+input{
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #f7f9fc;
+    padding: 3px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 80%;
+    font-size: 14px;
+    background-color: #f7f9fc;
+    border-collapse: separate;
+    border-color: #f2f2f2;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+}
+
+button {
+    padding: 12px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #eee;
+}
+
+.important-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.important-button:hover {
+    background-color: #0056b3;
+}

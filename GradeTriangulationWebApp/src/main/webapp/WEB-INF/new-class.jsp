@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="/styles/generic.css" type="text/css">
+    <link rel="stylesheet" href="/styles/new-class.css" type="text/css">
     <head>
         <title>New Class</title>
         <meta charset="UTF-8">
@@ -16,7 +16,8 @@
     </head>
     <body>
     <center>
-        <div>
+        <br><br>
+        <div class="class-form">
             <h1>Create a new class</h1>
             <form action="new-class" method="post">
                 Course Code:
