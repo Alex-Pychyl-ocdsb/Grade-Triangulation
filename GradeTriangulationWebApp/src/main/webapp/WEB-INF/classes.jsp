@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
     <link rel="stylesheet" href="/styles/generic.css" type="text/css">
     <link rel="stylesheet" href="/styles/classes.css" type="text/css">
     <head>
@@ -14,6 +15,9 @@
         <title>Your Classes</title>
     </head>
     <body>
+        <div class="topnav">
+            <button onclick="window.location = '/login'">Log out</button>
+        </div>
     <center>
         <h1>Your Classes</h1>
         <%=request.getAttribute("classes")%>

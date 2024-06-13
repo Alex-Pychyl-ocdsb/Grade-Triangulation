@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
     <link rel="stylesheet" href="/styles/new-class.css" type="text/css">
     <head>
         <title>New Class</title>
@@ -15,6 +16,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div class="topnav">
+            <button onclick="window.location = '/login'">Log out</button>
+            <button onclick="window.location = '/classes'">Home</button>
+        </div>
     <center>
         <br><br>
         <div class="class-form">

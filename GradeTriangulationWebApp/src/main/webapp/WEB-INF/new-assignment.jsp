@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
     <link rel="stylesheet" href="/styles/generic.css" type="text/css">
     <link href="/styles/dropdown.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,6 +17,10 @@
         <title><%=request.getAttribute("courseCode")%> - New Assignment</title>
     </head>
     <body>
+        <div class="topnav">
+            <button onclick="window.location = '/login'">Log out</button>
+            <button onclick="window.location = '/classes'">Home</button>
+        </div>
     <center>
         <h1>Create a new assignment</h1>
         <form action="new-assignment" method="post">

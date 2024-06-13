@@ -6,6 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
     <link href="/styles/dropdown.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/styles/student.css" type="text/css">
     <head>
@@ -13,6 +14,10 @@
         <title><%=request.getAttribute("name")%></title>
     </head>
     <body>
+        <div class="topnav">
+            <button onclick="window.location = '/login'">Log out</button>
+            <button onclick="window.location = '/classes'">Home</button>
+        </div>
     <center>
         <h1><%=request.getAttribute("name")%></h1>
         <form action="/save-student" method="post" style="display:inline-block">
