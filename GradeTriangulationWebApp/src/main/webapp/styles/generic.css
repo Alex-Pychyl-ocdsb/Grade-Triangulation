@@ -21,7 +21,7 @@ input[type="text"] {
     color: #333333;
 }
 
-button {
+button, input[type="sumbit"] {
     padding: 12px;
     background-color: white;
     color: black;

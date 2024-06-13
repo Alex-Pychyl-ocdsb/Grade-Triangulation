@@ -20,8 +20,10 @@
         </div>
     <center>
         <h1>Your Classes</h1>
-        <%=request.getAttribute("classes")%>
-    
+        <div style='display: inline-block; width: min-content; max-width: 60%' align='left'>
+            <%=request.getAttribute("classes")%>
+        </div>
+        <%=request.getAttribute("newButton")%>
     </center>
     <script>
         function goToClass(id, location) {

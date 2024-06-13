@@ -31,7 +31,7 @@ public class Classes extends PrivateServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String classes = "<div style='width: 60%' align='left'>";
+        String classes = "";
         response.setContentType("text/html;charset=UTF-8");
         try {
             PreparedStatement st = DatabaseConnection.init().prepareStatement(
@@ -41,13 +41,12 @@ public class Classes extends PrivateServlet {
             while (result.next()) {
                 classes += makeClass(result);
             }
-            classes += "</div>";
-            if (classes.equals("<div style='width: 60%' align='left'></div>")) {
-                classes = "You do not have any classes. <button class='important-button' onclick='window.location = \"/new-class\"'>Create one now.</button>";
-            } else {
-                classes += "<br><button class='important-button' onclick='window.location = \"/new-class\"'>Create new class</button>";
-            }
             request.setAttribute("classes", classes);
+            if (classes.isEmpty()) {
+                request.setAttribute("newButton", "You do not have any classes. <button class='important-button' onclick='window.location = \"/new-class\"'>Create one now.</button>");
+            } else {
+                request.setAttribute("newButton", "<br><button class='important-button' onclick='window.location = \"/new-class\"'>Create new class</button>");
+            }
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("Error: " + e);
         }

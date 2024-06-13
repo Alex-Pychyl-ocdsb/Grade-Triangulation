@@ -15,20 +15,27 @@ body {
 }
 
 .topnav {
-  background-color: #eee;
+  background-color: #d7d9dc;
   overflow: hidden;
   margin: 0;
+  padding: 0;
   width: 100%
 }
 
 .topnav button {
   float: right;
-  background-color: #e0f0ff;
+  background-color: #50abff;
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-  margin: 6px;
-  border-radius: 5px;
+  font-size: 16px;
+  border-width: 0;
+  border-radius: 0;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.topnav button:hover {
+    background-color: #70cbff;
 }
