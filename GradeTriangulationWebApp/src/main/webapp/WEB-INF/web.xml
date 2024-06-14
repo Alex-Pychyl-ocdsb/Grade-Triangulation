@@ -60,6 +60,10 @@
         <servlet-name>DownloadStudent</servlet-name>
         <servlet-class>alexshruthika.webapp.servlets.DownloadStudent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteClass</servlet-name>
+        <servlet-class>alexshruthika.webapp.servlets.DeleteClass</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewClass</servlet-name>
         <url-pattern>/new-class</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>DownloadStudent</servlet-name>
         <url-pattern>/download-student</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteClass</servlet-name>
+        <url-pattern>/delete-class</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="/styles/dropdown.css" type="text/css">
     <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
     <link rel="stylesheet" href="/styles/generic.css" type="text/css">
     <link rel="stylesheet" href="/styles/classes.css" type="text/css">
@@ -28,6 +29,12 @@
     <script>
         function goToClass(id, location) {
             window.location = location + "?classID=" + id;
+        }
+        
+        function deleteClass(id, name) {
+            if (window.confirm("Are you sure you want to delete " + name + "?")) {
+                window.location = "/delete-class?id=" + id;
+            }
         }
     </script>
     </body>
