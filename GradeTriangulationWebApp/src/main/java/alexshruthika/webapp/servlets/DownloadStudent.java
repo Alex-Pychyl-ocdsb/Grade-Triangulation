@@ -45,10 +45,24 @@ public class DownloadStudent extends PrivateServlet {
             int assignmentID;
             String value;
             ResultSet result;
-            PreparedStatement st = con.prepareStatement(
+            ResultSet assignments;
+            PreparedStatement st;
+            
+            // get student name
+            st = con.prepareStatement(
+            "select first_name, last_name from students where id=?");
+            st.setInt(1, studentID);
+            result = st.executeQuery();
+            result.next();
+            response.setHeader("Content-Disposition", "attachment; filename='"
+                    + result.getString("first_name") + " "
+                    + result.getString("last_name") + ".csv'");
+            
+            // get assignment ids and names
+            st = con.prepareStatement(
             "select id, name from assignments where assignment_class_id=?");
             st.setInt(1, (int)request.getSession().getAttribute("classID"));
-            ResultSet assignments = st.executeQuery();
+            assignments = st.executeQuery();
             while (assignments.next()) {
                 assignmentID = assignments.getInt("id");
                 // get assignment table value

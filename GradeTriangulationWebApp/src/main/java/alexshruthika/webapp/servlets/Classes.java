@@ -54,9 +54,10 @@ public class Classes extends PrivateServlet {
     }
     
     private String makeClass(ResultSet result) throws SQLException {
-        return "<div class='class-info' align='left'>"
-             + result.getString("course_code") + "<span style='float:right'>"
-             + result.getInt("year") + "</span><br>"
+        return "<div class='class-info' align='left'><div class='header'><span>"
+             + result.getString("course_code") + "</span><span style='float:right'>"
+             + result.getInt("year") + "<button class='more-options'>" 
+             + "<img src='/images/more-options.png'></button></span></div>"
              + "Semester " + result.getInt("semester") + "<span style='float:right'>"
              + "Period " + result.getInt("period") + "</span><br>"
              + "<button onclick=\"goToClass(\'" + result.getInt("id")

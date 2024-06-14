@@ -15,7 +15,7 @@ body {
 }
 
 .topnav {
-  background-color: #d7d9dc;
+  background-color: #888;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -24,8 +24,8 @@ body {
 
 .topnav button {
   float: right;
-  background-color: #50abff;
-  color: black;
+  background-color: #007bff;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -37,5 +37,5 @@ body {
 }
 
 .topnav button:hover {
-    background-color: #70cbff;
+    background-color: #0056b3;
 }

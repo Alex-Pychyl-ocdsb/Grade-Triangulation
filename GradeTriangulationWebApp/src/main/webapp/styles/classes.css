@@ -12,9 +12,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     border-color: #fff;
     border-radius: 10px;
     border-style: solid;
-    border-width: 3px;
+    border-width: 0px;
     padding: 10px;
     margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background-color: #007bff;
+    color: white;
+    margin: -10px;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-width: 0px;
+}
+
+.header p {
+    margin: 0;
+    padding: 0;
+    width: max-content;
+}
+
+.header button {
+    margin-top: 0px;
+    margin: 2px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+}
+.header img {
+    width: 67%;
+    height: 67%;
+    margin: auto;
+    display: block;
 }
 
 button {
