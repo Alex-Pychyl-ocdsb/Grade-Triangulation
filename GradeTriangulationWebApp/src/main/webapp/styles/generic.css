@@ -14,14 +14,23 @@ body {
 }
 
 input[type="text"] {
-    padding: 12px 10px;
+    padding: 5px;
     border: 1px solid #cccccc;
-    border-radius: 5px;
+    border-radius: 3px;
     font-size: 14px;
     color: #333333;
 }
 
-button, input[type="sumbit"] {
+.important-button, input[type="submit"].important-button {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="submit"].important-button:hover {
+    background-color: #0056b3;
+}
+
+button, input[type="submit"] {
     padding: 12px;
     background-color: white;
     color: black;
@@ -32,15 +41,6 @@ button, input[type="sumbit"] {
     margin-top: 10px;
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover {
     background-color: #eee;
-}
-
-.important-button {
-    background-color: #007bff;
-    color: white;
-}
-
-.important-button:hover {
-    background-color: #0056b3;
 }

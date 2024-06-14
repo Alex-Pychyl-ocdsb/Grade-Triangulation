@@ -10,7 +10,7 @@
 <html>
     <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
     <link rel="stylesheet" href="/styles/generic.css" type="text/css">
-    <link href="/styles/dropdown.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/styles/dropdown.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,8 +29,7 @@
             Name:
             <input type="text" name="name"> <br><br>
             Criteria:
-            <table name="criteria"
-                   id="criteria">
+            <table name="criteria" id="criteria">
             <tr>
             <th>Name</th>
             <th>Type</th>
@@ -48,7 +47,7 @@
             </td>
             </tr>
             </table>
-            <input type="button" onclick="addRow()" value="Add Criterium">
+                <button type="button" onclick="addRow()">Add Criterium</button>
             <br><%=request.getAttribute("message")%><br>
             <input class='important-button' type="submit" value="Create Assignment">
         </form>

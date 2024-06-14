@@ -20,7 +20,7 @@
         </div>
     <center>
         <h1>Your Classes</h1>
-        <div style='display: inline-block; width: min-content; max-width: 60%' align='left'>
+        <div style='width: 60%' align='center'>
             <%=request.getAttribute("classes")%>
         </div>
         <%=request.getAttribute("newButton")%>
