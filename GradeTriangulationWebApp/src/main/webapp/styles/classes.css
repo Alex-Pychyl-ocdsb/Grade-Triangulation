@@ -61,3 +61,7 @@ button {
     background-color: #f7f9fc;
     padding: 6px;
 }
+
+.important-button {
+    margin: 10px;
+}

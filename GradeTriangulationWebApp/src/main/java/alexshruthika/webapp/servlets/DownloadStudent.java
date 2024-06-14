@@ -54,9 +54,9 @@ public class DownloadStudent extends PrivateServlet {
             st.setInt(1, studentID);
             result = st.executeQuery();
             result.next();
-            response.setHeader("Content-Disposition", "attachment; filename='"
+            response.setHeader("Content-Disposition", "attachment; filename="
                     + result.getString("first_name") + " "
-                    + result.getString("last_name") + ".csv'");
+                    + result.getString("last_name") + ".csv");
             
             // get assignment ids and names
             st = con.prepareStatement(
