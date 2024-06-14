@@ -14,14 +14,16 @@ import java.sql.*;
  */
 public class DatabaseConnection {
     public static Connection init() throws SQLException, ClassNotFoundException {
+        // connection to windows mysql server
 //        Class.forName("com.mysql.cj.jdbc.Driver");
 //        return DriverManager.getConnection(
 //                "jdbc:mysql://localhost:3006/gradetriangulation"
 //              , "root"
 //              , "admin");
+        // connection to debian mysql server
         Class.forName("org.mariadb.jdbc.Driver");
         return DriverManager.getConnection(
-                "jdbc:mariadb://localhost:3006/gradetriangulation"
+                "jdbc:mariadb://localhost:3306/gradetriangulation"
               , "root"
               , "admin");
     }
