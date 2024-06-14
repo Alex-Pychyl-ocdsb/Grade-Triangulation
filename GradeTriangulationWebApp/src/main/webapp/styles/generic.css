@@ -26,7 +26,7 @@ input[type="text"] {
     color: white;
 }
 
-input[type="submit"].important-button:hover {
+.important-button:hover, input[type="submit"].important-button:hover {
     background-color: #0056b3;
 }
 
