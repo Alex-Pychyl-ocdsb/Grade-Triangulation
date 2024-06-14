@@ -39,6 +39,7 @@
                 4<input type="radio" name="period" value="4"> <br>
                 Students: <br>
                 <textarea name="students" 
+                          id="students"
                           onkeyup="textAreaAdjust(this)"
                           style="overflow:hidden"
                           placeholder="Firstname Lastname
@@ -54,9 +55,6 @@ Firstname Lastname..."
         // put current year in form
         if (document.getElementById("year").value === "")
             document.getElementById("year").value = new Date().getFullYear();
-        
-        // focus input told by servlet
-        document.getElementById("<%=request.getAttribute("focused")%>").focus();
         
         function textAreaAdjust(textarea) {
             textarea.style.height = "1px";   

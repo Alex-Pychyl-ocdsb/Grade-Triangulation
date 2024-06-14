@@ -6,7 +6,6 @@ package alexshruthika.webapp.servlets;
  */
 
 import java.io.*;
-import java.util.Arrays;
 import java.sql.*;
 
 import jakarta.servlet.ServletException;
