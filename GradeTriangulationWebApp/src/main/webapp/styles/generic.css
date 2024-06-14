@@ -23,6 +23,7 @@ input[type="text"] {
 
 .important-button, input[type="submit"].important-button {
     background-color: #007bff;
+    margin: 10px;
     color: white;
 }
 
@@ -31,7 +32,7 @@ input[type="text"] {
 }
 
 button, input[type="submit"] {
-    padding: 12px;
+    padding: 6px;
     background-color: white;
     color: black;
     font-size: 16px;
