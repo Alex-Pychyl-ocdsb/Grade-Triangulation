@@ -15,8 +15,8 @@
     </head>
     <body>
         <div class="topnav">
-            <button onclick="window.location = '/login'">Log out</button>
-            <button onclick="window.location = '/classes'">Home</button>
+            <button onclick="leaveTo('/login')">Log out</button>
+            <button onclick="leaveTo('/classes')">Home</button>
         </div>
     <center>
         <h1><%=request.getAttribute("name")%></h1>
@@ -29,7 +29,6 @@
             <%=request.getAttribute("rows")%>
         </table>
         <button type="submit">Save</button>
-        <button type="button" onclick="backToClasses()">Back to classes</button>
         <button type="submit" name="download">Download this table</button>
         </form>
     </center>
@@ -43,9 +42,9 @@
             isSaved = false;
         }
         
-        function backToClasses() {
+        function leaveTo(location) {
             if (isSaved || window.confirm('Are you sure you want to exit without saving?'))
-                window.location = '/classes';
+                window.location = location;
         }
         
         function resizeInput(input) {
