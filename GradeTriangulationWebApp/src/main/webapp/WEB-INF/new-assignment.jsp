@@ -22,35 +22,37 @@
             <button onclick="window.location = '/classes'">Home</button>
         </div>
     <center>
-        <h1>Create a new assignment</h1>
-        <form action="new-assignment" method="post">
-            Type of assignment:
-            <input type="text" name="type" required> <br>
-            Name:
-            <input type="text" name="name"> <br><br>
-            Criteria:
-            <table name="criteria" id="criteria">
-            <tr>
-            <th>Name</th>
-            <th>Type</th>
-            </tr>
-            <tr>
-                <td><input type="text" name="criterium0"></td>
-            <td>
-            <div class="dropdown">
-                <button type="button" class="dropbtn">[Type]</button>
-                <input name="type0" type="hidden" class="type">
-                <div class="dropdown-content">
-                  <%=request.getAttribute("types")%>
+        <div class="assignment-form">
+            <h1>Create a new assignment</h1>
+            <form action="new-assignment" method="post">
+                Type of assignment:
+                <input type="text" name="type" required> <br>
+                Name:
+                <input type="text" name="name"> <br><br>
+                Criteria:
+                <table name="criteria" id="criteria">
+                <tr>
+                <th>Name</th>
+                <th>Type</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="criterium0"></td>
+                <td>
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">[Type]</button>
+                    <input name="type0" type="hidden" class="type">
+                    <div class="dropdown-content">
+                      <%=request.getAttribute("types")%>
+                    </div>
                 </div>
-            </div>
-            </td>
-            </tr>
-            </table>
-                <button type="button" onclick="addRow()">Add Criterium</button>
-            <br><%=request.getAttribute("message")%><br>
-            <input class='important-button' type="submit" value="Create Assignment">
-        </form>
+                </td>
+                </tr>
+                </table>
+                    <button type="button" onclick="addRow()">Add Criterium</button>
+                <br><%=request.getAttribute("message")%><br>
+                <input class='important-button' type="submit" value="Create Assignment">
+            </form>
+        </div>
     </center>
     <script>
         document.getElementById("<%=request.getAttribute("focused")%>").focus();
