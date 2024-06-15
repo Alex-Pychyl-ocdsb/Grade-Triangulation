@@ -42,11 +42,10 @@
                           id="students"
                           onkeyup="textAreaAdjust(this)"
                           style="overflow:hidden"
-                          placeholder="Firstname Lastname
-Firstname Lastname..."
+                          placeholder="Lastname, Firstname"
                           cols="40" rows="4"></textarea>
                           
-                <p><%=request.getAttribute("message")%></p>
+                <p style="color: red"><%=request.getAttribute("message")%></p>
                 <button class="important-button" type="submit" name="create">Create</button>
             </form>
         </div>

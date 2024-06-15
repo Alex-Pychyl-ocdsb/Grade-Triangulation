@@ -104,8 +104,8 @@ public class NewClass extends PrivateServlet {
             studentNames[i] = studentNames[i].strip();
             if (studentNames[i].isEmpty())
                 continue;
-            if (!studentNames[i].contains(" "))
-                return new String[]{"////Error////", "All Students must have first and last name."};
+            if (!studentNames[i].contains(","))
+                return new String[]{"////Error////", "Use format Lastname, Firstname for students"};
             isEmpty = false;
             
         }
@@ -141,10 +141,10 @@ public class NewClass extends PrivateServlet {
             for (String i : studentNames) {
                 if (i.isEmpty())
                     continue;
-                splitName = i.split(" ");
+                splitName = i.split(",");
                 st.setInt(1, id);
-                st.setString(2, splitName[0]);
-                st.setString(3, splitName[1]);
+                st.setString(2, splitName[0].trim());
+                st.setString(3, splitName[1].trim());
                 st.executeUpdate();
             }
         } catch (ClassNotFoundException | SQLException e) { 
