@@ -45,7 +45,7 @@ public class NewAssignment extends PrivateServlet {
             
             criteria = checkCriteria(request);
             if (criteria.length == 1) {
-                focus = "criterium0";
+                focus = "criterion0";
                 message = criteria[0][0];
                 break checks;
             }
@@ -68,14 +68,14 @@ public class NewAssignment extends PrivateServlet {
         ArrayList<String> names = new ArrayList();
         ArrayList<String> types = new ArrayList();
         int i;
-        for (i = 0; request.getParameter("criterium" + i) != null
-                 && !request.getParameter("criterium" + i).isEmpty()
+        for (i = 0; request.getParameter("criterion" + i) != null
+                 && !request.getParameter("criterion" + i).isEmpty()
                  && request.getParameter("type" + i) != null
                  && !request.getParameter("type" + i).isEmpty(); i++) {
-            if (names.contains(request.getParameter("criterium" + i).toLowerCase())) {
+            if (names.contains(request.getParameter("criterion" + i).toLowerCase())) {
                 continue;
             }
-            names.add(request.getParameter("criterium" + i).toLowerCase());
+            names.add(request.getParameter("criterion" + i).toLowerCase());
             types.add(request.getParameter("type" + i));
         }
         if (i == 0)

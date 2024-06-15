@@ -32,7 +32,7 @@
                 <th>Type</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="criterium0"></td>
+                    <td><input type="text" name="criterion0"></td>
                 <td>
                 <div class="dropdown">
                     <button type="button" class="dropbtn">[Type]</button>
@@ -44,7 +44,7 @@
                 </td>
                 </tr>
                 </table>
-                    <button type="button" onclick="addRow()">Add Criterium</button>
+                    <button type="button" onclick="addRow()">Add Criterion</button>
                 <br><%=request.getAttribute("message")%><br>
                 <input class='important-button' type="submit" value="Create Assignment">
             </form>
@@ -56,7 +56,7 @@
         function addRow() {
             var criteria = document.getElementById("criteria");
             var row = criteria.insertRow();
-            row.insertCell(0).innerHTML = '<input type="text" name="criterium' + (criteria.rows.length - 2) + '">';
+            row.insertCell(0).innerHTML = '<input type="text" name="criterion' + (criteria.rows.length - 2) + '">';
             row.insertCell(1).innerHTML = 
                 '<div class="dropdown">'
                 + '<button type="button" class="dropbtn">[Type]</button>\n'

@@ -131,7 +131,7 @@ public class Assignment extends PrivateServlet {
     * @param values: already inputted criteria in order of columns
     * @param types: hashmap of all types, key=name of type, value=allowed strings
     * @param criteriaTypes: array of all criteria types in order of columns
-    * @return String of html to make row of dropdowns for each criterium
+    * @return String of html to make row of dropdowns for each criterion
     */
     private String makeRow(String studentName, int studentID, String[] values, HashMap<String, String[]> types, String[] criteriaTypes) {
         int valueLength;
