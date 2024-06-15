@@ -6,13 +6,14 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html id="html">
     <link rel="stylesheet" href="/styles/login.css" type="text/css">
     <head>
         <title>Sign Up</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+        <script src="/scripts/topnav.js"></script>
     <center>
     <div class="login-container">
         <h1>Welcome to Grade Triangulation</h1>

@@ -5,8 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
+<html id="html">
     <link href="/styles/dropdown.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/styles/assignment.css" type="text/css">
     <head>
@@ -14,14 +13,11 @@
         <title><%=request.getAttribute("name")%></title>
     </head>
     <body>
-        <div class="topnav">
-            <button onclick="leaveTo('/login')">Log out</button>
-            <button onclick="leaveTo('/classes')">Home</button>
-        </div>
+    <script src="/scripts/topnav.js"></script>
     <center>
         <h1><%=request.getAttribute("name")%></h1>
         <form action="/save-assignment" method="post">
-        <table style='border-collapse:separate;table-layout:auto;border-spacing:5px'>
+        <table>
             <tr>
                 <th>Student</th>
                 <%=request.getAttribute("criteria")%>

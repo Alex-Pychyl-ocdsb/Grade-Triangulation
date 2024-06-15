@@ -7,8 +7,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
+<html id="html">
     <link rel="stylesheet" href="/styles/new-class.css" type="text/css">
     <head>
         <title>New Class</title>
@@ -16,12 +15,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="topnav">
-            <button onclick="window.location = '/login'">Log out</button>
-            <button onclick="window.location = '/classes'">Home</button>
-        </div>
+        <script src="/scripts/topnav.js"></script>
     <center>
-        <br><br>
         <div class="class-form">
             <h1>Create a new class</h1>
             <form action="new-class" method="post">
@@ -46,7 +41,7 @@
                           cols="40" rows="4"></textarea>
                           
                 <p style="color: red"><%=request.getAttribute("message")%></p>
-                <button class="important-button" type="submit" name="create">Create</button>
+                <button type="submit" name="create">Create</button>
             </form>
         </div>
     </center>

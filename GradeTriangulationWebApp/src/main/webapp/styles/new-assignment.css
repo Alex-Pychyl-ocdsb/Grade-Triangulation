@@ -1,0 +1,127 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 15, 2024, 1:11:45 p.m.
+    Author     : alexp
+*/
+
+body {
+    background-color: #f7f9fc;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.darktheme body {
+    background-color: #222;
+    color: #fff;
+}
+
+.assignment-form {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: fit-content;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.darktheme .assignment-form{
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
+}
+
+h1 {
+    color: #333;
+}
+
+.darktheme h1 {
+    color: #eee;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #333333;
+    margin: 5px;
+}
+
+.darktheme input[type="text"]{
+    background-color: #505050;
+    border-color: #555;
+    color: #fff;
+}
+
+h3 {
+    margin: 10px;
+    color: #333;
+}
+
+.darktheme h3 {
+    color: #eee;
+}
+
+table {
+    margin: auto;
+}
+
+td, th {
+    border-bottom: 3px solid #aaa;
+}
+
+.darktheme td, .darktheme th {
+    border-color: #757575;
+}
+
+.important-button, input[type="submit"].important-button {
+    border: none;
+    background-color: #007bff;
+    margin: 10px;
+    color: white;
+}
+
+.important-button:hover, input[type="submit"].important-button:hover {
+    background-color: #0056b3;
+}
+
+button, input[type="submit"] {
+    padding: 6px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #eee;
+}
+
+
+
+
+
+.darktheme button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.darktheme button:hover {
+    background-color: #0750bd;
+}
+
+.darktheme input:hover{
+    background-color: #666666;
+}

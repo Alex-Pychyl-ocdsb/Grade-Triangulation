@@ -11,22 +11,53 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.darktheme body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
 h1 {
     color: #222;
 }
 
+.darktheme h1 {
+    color: #fff;
+}
+
 table{
+    border-collapse:separate;
+    table-layout:auto;
+    border-spacing:5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    border-collapse: separate;
-    border-color: #fff;
+    border: 3px solid white;
     border-radius: 10px;
-    border-style: solid;
-    border-width: 3px;
+}
+
+.darktheme table{
+    background-color: #333;
+    border-color: #333;
+    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
 }
 
 td {
     border-bottom: 3px solid #aaa;
+    padding: 0;
+}
+
+.darktheme td {
+    border-bottom: 3px solid #757575;
+}
+
+input[type="text"], input[type="number"] {
+    margin: 0;
+    border: none;
+}
+
+.darktheme input[type="text"], .darktheme input[type="number"] {
+    background-color: #333;
+    color: white;
 }
 
 button {
@@ -40,4 +71,17 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.darktheme button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.darktheme button:hover {
+    background-color: #0750bd;
 }

@@ -43,9 +43,9 @@ public class Classes extends PrivateServlet {
             }
             request.setAttribute("classes", classes);
             if (classes.isEmpty()) {
-                request.setAttribute("newButton", "You do not have any classes. <button class='important-button' onclick='window.location = \"/new-class\"'>Create one now.</button>");
+                request.setAttribute("newButton", "You do not have any classes. <button onclick='window.location = \"/new-class\"'>Create one now.</button>");
             } else {
-                request.setAttribute("newButton", "<br><button class='important-button' onclick='window.location = \"/new-class\"'>Create new class</button>");
+                request.setAttribute("newButton", "<br><button onclick='window.location = \"/new-class\"'>Create new class</button>");
             }
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("Error: " + e);

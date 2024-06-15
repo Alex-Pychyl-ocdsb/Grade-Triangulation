@@ -55,10 +55,6 @@ public class Assignments extends PrivateServlet {
             result.next();
             request.getSession().setAttribute("courseCode", result.getString("course_code"));
             request.setAttribute("courseCode", result.getString("course_code"));
-            request.setAttribute("classInfo", result.getString("course_code") + ", "
-                                            + result.getInt("year") + ", "
-                                            + "SEM" + result.getInt("semester") + ", "
-                                            + "P" + result.getInt("period")); // TODO
         
             // get assignments
             String assignments = "";

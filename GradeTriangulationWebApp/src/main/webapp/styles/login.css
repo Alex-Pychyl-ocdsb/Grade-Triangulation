@@ -10,11 +10,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f9fc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+}
+
+.darktheme body {
+    background-color: #222;
+    color: #ffffff;
 }
 
 .login-container {
@@ -24,18 +24,31 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 350px;
     text-align: center;
+    margin-top: 50px;
+}
+
+.darktheme .login-container {
+    background-color: #333;
 }
 
 .login-container h1 {
     margin-bottom: 15px;
     font-size: 26px;
-    color: #333333;
+    color: #333;
+}
+
+.darktheme .login-container h1 {
+    color: #ccc;
 }
 
 .login-container p {
     margin-bottom: 25px;
     font-size: 14px;
     color: #666666;
+}
+
+.darktheme .login-container p {
+    color: #bebebe;
 }
 
 .form-group {
@@ -50,6 +63,10 @@ body {
     color: #333333;
 }
 
+.darktheme .form-group label {
+    color: white;
+}
+
 .form-group input[type="text"],
 .form-group input[type="password"] {
     width: calc(100% - 20px);
@@ -57,15 +74,21 @@ body {
     border: 1px solid #cccccc;
     border-radius: 5px;
     font-size: 14px;
-    color: #333333;
+    color: #333;
     background-color: #f7f9fc;
+}
+
+.darktheme .form-group input[type="text"],
+.darktheme .form-group input[type="password"] {
+    background-color: #d6d6d6;
+    color: #333;
 }
 
 .form-group input[type="checkbox"] {
     margin-left: 5px;
 }
 
-button {
+.login-container button {
     width: 100%;
     padding: 12px;
     border: none;
@@ -78,16 +101,16 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.login-container button:hover {
     background-color: #0056b3;
 }
 
-.redirect-button {
+.login-container .redirect-button {
     background-color: #28a745;
     margin-top: 15px;
 }
 
-.redirect-button:hover {
+.login-container .redirect-button:hover {
     background-color: #218838;
 }
 

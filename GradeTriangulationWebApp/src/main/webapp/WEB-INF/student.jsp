@@ -5,19 +5,15 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="/styles/topnav.css" type="text/css">
+<html id="html">
     <link href="/styles/dropdown.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/styles/student.css" type="text/css">
+    <link href="/styles/student.css" rel="stylesheet" type="text/css">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><%=request.getAttribute("name")%></title>
     </head>
     <body>
-        <div class="topnav">
-            <button onclick="leaveTo('/login')">Log out</button>
-            <button onclick="leaveTo('/classes')">Home</button>
-        </div>
+        <script src="/scripts/topnav.js"></script>
     <center>
         <h1><%=request.getAttribute("name")%></h1>
         <form action="/save-student" method="post" style="display:inline-block">
