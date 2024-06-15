@@ -61,9 +61,9 @@ public class SignUp extends HttpServlet {
             return "";
         if (username.length() > 49)
             return "Username must be less than 50 characters.";
-        try {
+        try (Connection con = DatabaseConnection.init()) {
             // check if there's already a user with that name
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+            PreparedStatement st = con.prepareStatement(
                 "select id from users where username=?");
             st.setString(1, username);
             ResultSet result = st.executeQuery();
@@ -98,10 +98,7 @@ public class SignUp extends HttpServlet {
     }
     
     private void createUser(String username, String password, HttpSession session, HttpServletResponse response) {
-        try {
-            // connect to database
-            Connection con = DatabaseConnection.init();
-            
+        try (Connection con = DatabaseConnection.init()) {
             // add user to table of users
             PreparedStatement st = con.prepareStatement(
                 "insert into users (username, password) values (?, ?)");

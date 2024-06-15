@@ -33,8 +33,8 @@ public class Classes extends PrivateServlet {
             throws ServletException, IOException {
         String classes = "";
         response.setContentType("text/html;charset=UTF-8");
-        try {
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+        try (Connection con = DatabaseConnection.init()) {
+            PreparedStatement st = con.prepareStatement(
                     "select * from classes where user_id=?");
             st.setInt(1, (Integer)request.getSession().getAttribute("userID"));
             ResultSet result = st.executeQuery();

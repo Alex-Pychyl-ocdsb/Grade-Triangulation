@@ -32,11 +32,10 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         // try catch with breakpoint
-        checkUsername: try {
+        checkUsername: try (Connection con = DatabaseConnection.init()) {
             if (request.getParameter("username") == null)
                 break checkUsername;
-            // connect to database and prepare statement to retrieve password given username
-            Connection con = DatabaseConnection.init();
+            // prepare statement to retrieve password given username
             PreparedStatement st = con.prepareStatement("select password, id from users where username =?");
             // insert inputted username into statement
             st.setString(1, request.getParameter("username"));

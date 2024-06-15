@@ -41,10 +41,10 @@ public class SaveAssignment extends PrivateServlet {
         int assignmentID = (int)request.getSession().getAttribute("assignmentID");
         int classID = (int)request.getSession().getAttribute("classID");
         
-        try {
+        try (Connection con = DatabaseConnection.init()) {
             String currentValue;
             // get all student ids
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+            PreparedStatement st = con.prepareStatement(
             "select id from students where student_class_id=?");
             st.setInt(1, classID);
             ResultSet studentIDs = st.executeQuery();
@@ -53,7 +53,7 @@ public class SaveAssignment extends PrivateServlet {
                 for (int i = 0; i < 15; i++) {
                     System.err.println(request.getParameter(studentIDs.getInt(1) + "_" + i));
                     if ((currentValue = request.getParameter(studentIDs.getInt(1) + "_" + i)) != null) {
-                        st = DatabaseConnection.init().prepareStatement(
+                        st = con.prepareStatement(
                         "update assignment" + assignmentID + " set `"
                         + request.getParameter("header" + i) + "` = ? where assignment"
                         + assignmentID + "_student_id=?");

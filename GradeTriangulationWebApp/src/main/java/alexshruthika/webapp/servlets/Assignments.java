@@ -46,9 +46,9 @@ public class Assignments extends PrivateServlet {
         // get class id
         int classID = (int)request.getSession().getAttribute("classID");
         
-        try {
+        try (Connection con = DatabaseConnection.init()) {
             // get other class information
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+            PreparedStatement st = con.prepareStatement(
             "select * from classes where id=?");
             st.setInt(1, classID);
             ResultSet result = st.executeQuery();
@@ -58,7 +58,7 @@ public class Assignments extends PrivateServlet {
         
             // get assignments
             String assignments = "";
-            st = DatabaseConnection.init().prepareStatement(
+            st = con.prepareStatement(
             "select * from assignments where assignment_class_id=?");
             st.setInt(1, classID);
             result = st.executeQuery();

@@ -123,7 +123,7 @@ public class NewAssignment extends PrivateServlet {
                 "constraint assignment" + id + "_student_id foreign key(assignment" + id + "_student_id) references students(id) on delete cascade on update cascade);";
             st = con.prepareStatement(tableStatement);
             st.executeUpdate();
-            createStudents((Integer)session.getAttribute("classID"), id);
+            createStudents((Integer)session.getAttribute("classID"), id, con);
             return id;
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("Error: " + e);
@@ -132,9 +132,8 @@ public class NewAssignment extends PrivateServlet {
         return -1;
     }
     
-    private void createStudents(int classID, int assignmentID) throws SQLException, ClassNotFoundException {
+    private void createStudents(int classID, int assignmentID, Connection con) throws SQLException, ClassNotFoundException {
         ArrayList<Integer> studentIDs = new ArrayList();
-        Connection con = DatabaseConnection.init();
         // get all students
         PreparedStatement st = con.prepareStatement(
         "select id from students where student_class_id=?");
@@ -155,8 +154,8 @@ public class NewAssignment extends PrivateServlet {
     
     private String getTypes() {
         String out = "";
-        try {
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+        try (Connection con = DatabaseConnection.init()) {
+            PreparedStatement st = con.prepareStatement(
             "select name from types");
             ResultSet result = st.executeQuery();
             while (result.next()) {

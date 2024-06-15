@@ -46,9 +46,9 @@ public class Students extends PrivateServlet {
         // get class id
         int classID = (int)request.getSession().getAttribute("classID");
         
-        try {
+        try (Connection con = DatabaseConnection.init()) {
             // get other class information
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+            PreparedStatement st = con.prepareStatement(
             "select * from classes where id=?");
             st.setInt(1, classID);
             ResultSet result = st.executeQuery();
@@ -62,7 +62,7 @@ public class Students extends PrivateServlet {
         
             // get students
             String students = "<table style='border-collapse:separate;table-layout:auto;border-spacing:10px'>";
-            st = DatabaseConnection.init().prepareStatement(
+            st = con.prepareStatement(
             "select * from students where student_class_id=?");
             st.setInt(1, classID);
             result = st.executeQuery();

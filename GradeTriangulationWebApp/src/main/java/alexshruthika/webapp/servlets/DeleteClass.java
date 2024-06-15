@@ -33,8 +33,8 @@ public class DeleteClass extends PrivateServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try {
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+        try (Connection con = DatabaseConnection.init()) {
+            PreparedStatement st = con.prepareStatement(
             "delete from classes where id=?");
             st.setInt(1, Integer.parseInt(request.getParameter("id")));
             st.executeUpdate();

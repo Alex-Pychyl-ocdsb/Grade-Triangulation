@@ -47,8 +47,8 @@ public class Student extends PrivateServlet {
         // get student id
         int studentID = (int)request.getSession().getAttribute("studentID");
         
-        try {
-            PreparedStatement st = DatabaseConnection.init().prepareStatement(
+        try (Connection con = DatabaseConnection.init()) {
+            PreparedStatement st = con.prepareStatement(
             "select first_name, last_name from students where id=?");
             st.setInt(1, studentID);
             ResultSet result = st.executeQuery();
@@ -65,7 +65,7 @@ public class Student extends PrivateServlet {
     private String makeRows(int studentID, int classID) {
         try (Connection con = DatabaseConnection.init()) {
             String out = "";
-            HashMap<String, String[]> types = getTypes();
+            HashMap<String, String[]> types = getTypes(con);
             
             // go through all assignments of class
             PreparedStatement st = con.prepareStatement(
@@ -157,11 +157,11 @@ public class Student extends PrivateServlet {
         return out + "</tr></table>\n";
     }
     
-    private HashMap<String, String[]> getTypes() throws SQLException, ClassNotFoundException {
+    private HashMap<String, String[]> getTypes(Connection con) throws SQLException, ClassNotFoundException {
         HashMap<String, String[]> out = new HashMap();
         String[] currentType;
         // get all types
-        PreparedStatement st = DatabaseConnection.init().prepareStatement(
+        PreparedStatement st = con.prepareStatement(
         "select * from types");
         ResultSet result = st.executeQuery();
         while (result.next()) {
