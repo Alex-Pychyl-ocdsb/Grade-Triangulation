@@ -58,8 +58,6 @@ public class Classes extends PrivateServlet {
              + result.getString("course_code") + "</span><span style='float:right'>"
              + result.getInt("year") + "<div class='dropdown'><button class='more-options'>" 
              + "<img src='/images/more-options.png'></button><div class='dropdown-content'>"
-             + "<a onclick='window.location = \"/download-class\"'>Download</a>"
-             + "<a onclick='window.location = \"/edit-class\"'>Edit</a>"
              + "<a class='delete' onclick='deleteClass(" + result.getInt("id")
              + ", \"" + result.getString("course_code") + "\")'>Delete</a></div></div></span></div>"
              + "Semester " + result.getInt("semester") + "<span style='float:right'>"
