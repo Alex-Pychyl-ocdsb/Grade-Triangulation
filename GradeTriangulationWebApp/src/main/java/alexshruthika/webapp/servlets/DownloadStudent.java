@@ -13,6 +13,7 @@ import jakarta.servlet.http.*;
 
 import alexshruthika.webapp.PrivateServlet;
 import alexshruthika.webapp.DatabaseConnection;
+import alexshruthika.webapp.StudentFileCreator;
 
 /**
  *
@@ -37,58 +38,19 @@ public class DownloadStudent extends PrivateServlet {
             response.sendRedirect("/students");
             return;
         }
-        // get student and class id
+        // get student id
         int studentID = (int)request.getSession().getAttribute("studentID");
         
-        try (Connection con = DatabaseConnection.init();
-             PrintWriter out = response.getWriter()) {
-            int assignmentID;
-            String value;
-            ResultSet result;
-            ResultSet assignments;
-            PreparedStatement st;
-            
-            // get student name
-            st = con.prepareStatement(
-            "select first_name, last_name from students where id=?");
-            st.setInt(1, studentID);
-            result = st.executeQuery();
-            result.next();
+        
+        try (PrintWriter out = response.getWriter()) {
             response.setHeader("Content-Disposition", "attachment; filename="
-                    + result.getString("first_name") + " "
-                    + result.getString("last_name") + ".csv");
-            
-            // get assignment ids and names
-            st = con.prepareStatement(
-            "select id, name from assignments where assignment_class_id=?");
-            st.setInt(1, (int)request.getSession().getAttribute("classID"));
-            assignments = st.executeQuery();
-            while (assignments.next()) {
-                assignmentID = assignments.getInt("id");
-                // get assignment table value
-                st = con.prepareStatement("select * from assignment"
-                   + assignmentID + " where assignment" + assignmentID
-                   + "_student_id=?");
-                st.setInt(1, studentID);
-                result = st.executeQuery();
-                result.next();
-                // print criteria
-                for (int i = 2; i <= result.getMetaData().getColumnCount(); i++) {
-                    value = result.getMetaData().getColumnName(i);
-                    value = value.substring(0, value.lastIndexOf('_'));
-                    out.print("," + value);
-                }
-                out.print("\n" + assignments.getString("name"));
-                for (int i = 2; i <= result.getMetaData().getColumnCount(); i++) {
-                    value = result.getString(i);
-                    if (value == null) value = "";
-                    out.print("," + value);
-                }
-                out.println();
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            System.err.println("Error: " + e);
+                    + StudentFileCreator.getName(studentID) + ".csv");
+            StudentFileCreator.create(
+                    (int)request.getSession().getAttribute("studentID"), 
+                    (int)request.getSession().getAttribute("classID"), 
+                    out);
         }
+        
         response.sendRedirect("/assignment");
     }
 

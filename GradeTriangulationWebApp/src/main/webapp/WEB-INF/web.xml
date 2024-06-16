@@ -61,6 +61,10 @@
         <servlet-class>alexshruthika.webapp.servlets.DownloadStudent</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>DownloadClass</servlet-name>
+        <servlet-class>alexshruthika.webapp.servlets.DownloadClass</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DeleteClass</servlet-name>
         <servlet-class>alexshruthika.webapp.servlets.DeleteClass</servlet-class>
     </servlet>
@@ -123,6 +127,10 @@
     <servlet-mapping>
         <servlet-name>DownloadStudent</servlet-name>
         <url-pattern>/download-student</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DownloadClass</servlet-name>
+        <url-pattern>/download-class</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteClass</servlet-name>

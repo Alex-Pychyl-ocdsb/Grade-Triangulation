@@ -51,7 +51,6 @@ public class SaveAssignment extends PrivateServlet {
             while (studentIDs.next()) {
                 // go through each column
                 for (int i = 0; i < 15; i++) {
-                    System.err.println(request.getParameter(studentIDs.getInt(1) + "_" + i));
                     if ((currentValue = request.getParameter(studentIDs.getInt(1) + "_" + i)) != null) {
                         st = con.prepareStatement(
                         "update assignment" + assignmentID + " set `"
