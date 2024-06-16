@@ -6,63 +6,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : Jun 12, 2024, 9:01:01 a.m.
     Author     : alexp
 */
-
-body {
-    background-color: #f7f9fc;
-    font-family: Arial, sans-serif;
-    justify-content: center;
-    align-items: center;
-}
-
-.darktheme body {
-    background-color: #222;
-    color: white;
-}
-
-.class-form {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: fit-content;
-    background-color: #fff;
-    border: none;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.darktheme .class-form {
-    background-color: #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
-}
-
-h1 {
-    color: #333;
-}
-
-.darktheme h1 {
-    color: #eee;
-}
-
-input{
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #333;
-    background-color: #f7f9fc;
-    padding: 3px;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
+@import "generic.css";
 
 input[type="radio"] {
     margin-bottom: 10px;
-}
-
-.darktheme input{
-    border-color: #555;
-    background-color: #505050;
-    color: #eee;
 }
 
 textarea {
@@ -74,6 +21,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 6px;
     padding: 6px;
+    overflow: hidden;
 }
 
 .darktheme textarea {
@@ -82,17 +30,6 @@ textarea {
     color: #eee;
 }
 
-button {
+.important-button {
     padding: 12px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
 }

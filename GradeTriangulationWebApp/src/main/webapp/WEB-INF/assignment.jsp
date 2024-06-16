@@ -6,7 +6,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html id="html">
-    <link href="/styles/dropdown.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/styles/assignment.css" type="text/css">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,15 +16,15 @@
     <center>
         <h1><%=request.getAttribute("name")%></h1>
         <form action="/save-assignment" method="post">
-        <table>
-            <tr>
-                <th>Student</th>
-                <%=request.getAttribute("criteria")%>
-            </tr>
-            <%=request.getAttribute("rows")%>
-        </table>
-        <button type="submit">Save</button>
-        <button type="submit" name="download">Download this table</button>
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <%=request.getAttribute("criteria")%>
+                </tr>
+                <%=request.getAttribute("rows")%>
+            </table>
+        <button type="submit" class="important-button">Save</button>
+        <button type="submit" name="download" class="important-button">Download this table</button>
         </form>
     </center>
     <script>

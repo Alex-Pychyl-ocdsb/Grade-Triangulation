@@ -7,27 +7,78 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : alexp
 */
 
-body {
-    background-color: #f7f9fc;
-    font-family: Arial, sans-serif;
+html {
+    padding: 0;
 }
 
-input[type="text"] {
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f9fc;
+}
+
+.darktheme body {
+    background-color: #222;
+    color: #fff;
+}
+
+.container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: fit-content;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.darktheme .container {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
+}
+
+h1 {
+    color: #333;
+}
+
+.darktheme h1 {
+    color: #eee;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="number"] {
     padding: 5px;
     border: 1px solid #cccccc;
     border-radius: 3px;
     font-size: 14px;
-    color: #333333;
+    color: #333;
+    background-color: #f7f9fc;
+    margin: 5px;
 }
 
-.important-button, input[type="submit"].important-button {
-    background-color: #007bff;
-    margin: 10px;
-    color: white;
+input[type="text"]:hover, 
+input[type="password"]:hover, 
+input[type="number"]:hover {
+    background-color: #eee;
 }
 
-.important-button:hover, input[type="submit"].important-button:hover {
-    background-color: #0056b3;
+.darktheme input[type="text"], 
+.darktheme input[type="password"], 
+.darktheme input[type="number"] {
+    background-color: #505050;
+    border-color: #555;
+    color: #fff;
+}
+
+.darktheme input[type="text"]:hover, 
+.darktheme input[type="password"]:hover, 
+.darktheme input[type="number"]:hover {
+    background-color: #666666;
 }
 
 button, input[type="submit"] {
@@ -43,4 +94,42 @@ button, input[type="submit"] {
 
 button:hover, input[type="submit"]:hover {
     background-color: #eee;
+}
+
+.darktheme button {
+    background-color: #515050;
+    color: #fff;
+    border-color: #444;
+}
+
+.darktheme button:hover {
+    background-color: #616060;
+}
+
+.important-button, 
+input[type="submit"].important-button,
+.darktheme .important-button, 
+.darktheme input[type="submit"].important-button{
+    border: none;
+    background-color: #007bff;
+    margin: 10px;
+    color: white;
+}
+
+.important-button:hover, input[type="submit"].important-button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    border-collapse:separate;
+    table-layout:auto;
+    border-spacing: 10px 5px;
+}
+
+td, th {
+    border-bottom: 3px solid #aaa;
+}
+
+.darktheme td, .darktheme th {
+    border-color: #757575;
 }

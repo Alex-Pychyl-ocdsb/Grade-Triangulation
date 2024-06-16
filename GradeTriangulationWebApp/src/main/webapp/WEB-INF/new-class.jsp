@@ -17,7 +17,7 @@
     <body>
         <script src="/scripts/topnav.js"></script>
     <center>
-        <div class="class-form">
+        <div class="container">
             <h1>Create a new class</h1>
             <form action="new-class" method="post">
                 Course Code:
@@ -36,12 +36,11 @@
                 <textarea name="students" 
                           id="students"
                           onkeyup="textAreaAdjust(this)"
-                          style="overflow:hidden"
                           placeholder="Lastname, Firstname"
                           cols="40" rows="4"></textarea>
                           
                 <p style="color: red"><%=request.getAttribute("message")%></p>
-                <button type="submit" name="create">Create</button>
+                <button class="important-button" type="submit" name="create">Create</button>
             </form>
         </div>
     </center>

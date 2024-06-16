@@ -6,29 +6,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : Jun 11, 2024, 5:08:15 p.m.
     Author     : alexp
 */
-body {
-    background-color: #f7f9fc;
-    font-family: Arial, sans-serif;
-}
-
-.darktheme body {
-    background-color: #222;
-    color: #fff;
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    color: #222;
-}
-
-.darktheme h1 {
-    color: #fff;
-}
+@import "generic.css";
+@import "dropdown.css";
 
 table{
-    border-collapse:separate;
-    table-layout:auto;
-    border-spacing:5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     border: 3px solid white;
@@ -41,17 +22,9 @@ table{
     box-shadow: 0 4px 8px rgba(1, 1, 1, 0.5);
 }
 
-td {
-    border-bottom: 3px solid #aaa;
-    padding: 0;
-}
-
-.darktheme td {
-    border-bottom: 3px solid #757575;
-}
-
 input[type="text"], input[type="number"] {
     margin: 0;
+    background-color: #fff;
     border: none;
 }
 
@@ -60,28 +33,6 @@ input[type="text"], input[type="number"] {
     color: white;
 }
 
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.darktheme button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0066ff;
-    color: #fff;
-    cursor: pointer;
-}
-
-.darktheme button:hover {
-    background-color: #0750bd;
+.important-button {
+    margin: 10px 0;
 }

@@ -6,11 +6,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : Jun 12, 2024, 7:22:44 p.m.
     Author     : alexp
 */
-.darktheme body {
-    background-color: #222;
-    color: #fff;
-    font-family: Arial, sans-serif;
-}
+@import "generic.css";
+@import "dropdown.css";
 
 .class-info {
     display: inline-block;
@@ -79,40 +76,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     filter: invert(1);
 }
 
-.dropdown-content .delete {
+.dropdown-content .delete,
+.darktheme .dropdown-content .delete {
     color: red;
-}
-
-.class-info button {
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #f7f9fc;
-    margin: 3px;
-    margin-top: 10px;
-    color: black;
-}
-
-.class-info button:hover {
-    background-color: #e7e9ec;
-}
-
-.darktheme .class-info button {
-    border-color: #444;
-    background-color: #515050;
-    color: white;
-}
-
-.darktheme .class-info button:hover {
-    background-color: #616060;
-}
-
-button {
-    background-color: #007bff;
-    margin: 10px;
-    color: white;
-    border: none;
 }
 
 

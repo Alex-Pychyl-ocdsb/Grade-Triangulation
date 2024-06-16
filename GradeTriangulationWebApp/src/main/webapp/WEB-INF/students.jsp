@@ -15,7 +15,7 @@
     <body>
         <script src="/scripts/topnav.js"></script>
     <center>
-        <h1><%=request.getAttribute("classInfo")%></h1>
+        <h1><%=request.getAttribute("courseCode")%></h1>
         <%=request.getAttribute("students")%>
     </center>
     <script>

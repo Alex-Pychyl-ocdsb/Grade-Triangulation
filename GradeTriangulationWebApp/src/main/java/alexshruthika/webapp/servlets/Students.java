@@ -55,10 +55,6 @@ public class Students extends PrivateServlet {
             result.next();
             request.getSession().setAttribute("courseCode", result.getString("course_code"));
             request.setAttribute("courseCode", result.getString("course_code"));
-            request.setAttribute("classInfo", result.getString("course_code") + ", "
-                                            + result.getInt("year") + ", "
-                                            + "SEM" + result.getInt("semester") + ", "
-                                            + "P" + result.getInt("period")); // TODO
         
             // get students
             String students = "<table style='border-collapse:separate;table-layout:auto;border-spacing:10px'>";

@@ -17,11 +17,11 @@
     <center>
         <h1><%=request.getAttribute("name")%></h1>
         <form action="/save-student" method="post" style="display:inline-block">
-            <div align="left" class="assignments">
+            <div align="left" class="container">
                 <%=request.getAttribute("rows")%>
             </div>
-            <button type="submit">Save</button>
-            <button type="submit" name="download">Download this table</button>
+            <button class="important-button" type="submit">Save</button>
+            <button class="important-button" type="submit" name="download">Download this table</button>
         </form>
     </center>   
     <script>

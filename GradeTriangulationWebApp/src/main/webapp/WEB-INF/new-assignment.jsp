@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html id="html">
     <link rel="stylesheet" href="/styles/new-assignment.css" type="text/css">
-    <link rel="stylesheet" href="/styles/dropdown.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,7 +17,7 @@
     <body>
         <script src="/scripts/topnav.js"></script>
     <center>
-        <div class="assignment-form">
+        <div class="container">
             <h1>Create a new assignment</h1>
             <form action="new-assignment" method="post">
                 Type of assignment:

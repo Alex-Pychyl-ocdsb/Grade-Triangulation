@@ -15,7 +15,7 @@
 <body>
     <script src="/scripts/topnav.js"></script>
 <center>
-    <div class="login-container">
+    <div class="container">
         <h1>Welcome to Grade Triangulation</h1>
         <p>Please log in or sign up</p>
         <form method="post" action="login">
