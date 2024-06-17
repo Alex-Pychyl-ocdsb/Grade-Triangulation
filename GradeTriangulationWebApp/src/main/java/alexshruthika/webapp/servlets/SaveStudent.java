@@ -44,8 +44,16 @@ public class SaveStudent extends PrivateServlet {
         try (Connection con = DatabaseConnection.init()) {
             String currentValue;
             int assignmentID;
-            // get all assignment ids
+            
+            // set notes
             PreparedStatement st = con.prepareStatement(
+            "update students set notes = ? where id=?");
+            st.setString(1, request.getParameter("notes"));
+            st.setInt(2, studentID);
+            st.executeUpdate();
+            
+            // get all assignment ids
+            st = con.prepareStatement(
             "select id from assignments where assignment_class_id=?");
             st.setInt(1, classID);
             ResultSet assignmentIDs = st.executeQuery();

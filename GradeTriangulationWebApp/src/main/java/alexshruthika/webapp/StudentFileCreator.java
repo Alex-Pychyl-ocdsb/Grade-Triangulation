@@ -40,6 +40,14 @@ public class StudentFileCreator {
             ResultSet assignments;
             PreparedStatement st;
             
+            // get and print notes
+            st = con.prepareStatement(
+            "select notes from students where id=?");
+            st.setInt(1, studentID);
+            result = st.executeQuery();
+            result.next();
+            out.println("notes," + result.getString(1));
+            
             // get assignment ids and names
             st = con.prepareStatement(
             "select id, name from assignments where assignment_class_id=?");

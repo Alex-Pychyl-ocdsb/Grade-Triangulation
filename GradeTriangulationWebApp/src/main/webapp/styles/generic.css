@@ -49,6 +49,15 @@ h1 {
     color: #eee;
 }
 
+h3 {
+    margin: 10px;
+    color: #333;
+}
+
+.darktheme h3 {
+    color: #eee;
+}
+
 input[type="text"], 
 input[type="password"], 
 input[type="number"] {

@@ -50,8 +50,6 @@ public class DownloadStudent extends PrivateServlet {
                     (int)request.getSession().getAttribute("classID"), 
                     out);
         }
-        
-        response.sendRedirect("/assignment");
     }
 
     /**

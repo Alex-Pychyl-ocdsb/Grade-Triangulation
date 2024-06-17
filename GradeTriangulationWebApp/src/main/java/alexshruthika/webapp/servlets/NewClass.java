@@ -143,8 +143,8 @@ public class NewClass extends PrivateServlet {
                     continue;
                 splitName = i.split(",");
                 st.setInt(1, id);
-                st.setString(2, splitName[1].trim());
-                st.setString(3, splitName[0].trim());
+                st.setString(2, splitName[1].replace("\"", "").trim());
+                st.setString(3, splitName[0].replace("\"", "").trim());
                 st.executeUpdate();
             }
         } catch (ClassNotFoundException | SQLException e) { 

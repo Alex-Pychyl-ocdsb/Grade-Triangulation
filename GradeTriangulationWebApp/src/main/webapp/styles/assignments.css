@@ -3,12 +3,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : Jun 15, 2024, 1:11:45 p.m.
+    Created on : Jun 17, 2024, 10:13:34 a.m.
     Author     : alexp
 */
-@import "dropdown.css";
 @import "generic.css";
 
-table {
-    margin: auto;
+td {
+    text-align: right;
+    border:none;
+}
+
+.important-button {
+    padding: 10px;
 }

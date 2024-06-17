@@ -11,14 +11,14 @@ import java.sql.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 
-import alexshruthika.webapp.PrivateServlet;
 import alexshruthika.webapp.DatabaseConnection;
+import alexshruthika.webapp.PrivateServlet;
 
 /**
  *
  * @author alexp
  */
-public class DeleteClass extends PrivateServlet {
+public class DeleteAssignment extends PrivateServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,31 +29,21 @@ public class DeleteClass extends PrivateServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (Connection con = DatabaseConnection.init()) {
-            // drop all assignments
             PreparedStatement st = con.prepareStatement(
-            "select id from assignments where assignment_class_id=?");
+            "delete from assignments where id=?");
             st.setInt(1, Integer.parseInt(request.getParameter("id")));
-            ResultSet result = st.executeQuery();
-            while (result.next()) {
-                st = con.prepareStatement(
-                "drop table assignment" + result.getInt(1));
-                st.executeUpdate();
-            }
-            
-            // delete row in classes
+            st.executeUpdate();
             st = con.prepareStatement(
-            "delete from classes where id=?");
-            st.setInt(1, Integer.parseInt(request.getParameter("id")));
+            "drop table assignment" + request.getParameter("id"));
             st.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("Error: " + e);
         }
-        response.sendRedirect("/classes");
+        response.sendRedirect("/assignments");
     }
 
     /**
@@ -63,7 +53,7 @@ public class DeleteClass extends PrivateServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Deletes student";
     }// </editor-fold>
 
 }

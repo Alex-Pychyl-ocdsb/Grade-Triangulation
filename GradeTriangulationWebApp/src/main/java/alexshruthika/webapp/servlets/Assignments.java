@@ -57,7 +57,7 @@ public class Assignments extends PrivateServlet {
             request.setAttribute("courseCode", result.getString("course_code"));
         
             // get assignments
-            String assignments = "";
+            String assignments = "<table>";
             st = con.prepareStatement(
             "select * from assignments where assignment_class_id=?");
             st.setInt(1, classID);
@@ -66,11 +66,11 @@ public class Assignments extends PrivateServlet {
                 assignments += makeAssignment(result);
             }
             request.setAttribute("assignments", assignments);
-            if (assignments.isEmpty()) {
-                request.setAttribute("newButton", "You do not have any assignments."
+            if (assignments.equals("<table>")) {
+                request.setAttribute("newButton", "</table>You do not have any assignments."
                                                 + "<button class='important-button' onclick='window.location = \"/new-assignment\"'>Create one now.</button>");
             } else {
-                request.setAttribute("newButton", "<button class='important-button' onclick='window.location = \"/new-assignment\"'>Create new assignment</button>");
+                request.setAttribute("newButton", "</table><button class='important-button' onclick='window.location = \"/new-assignment\"'>Create new assignment</button>");
             }
             
         } catch (SQLException | ClassNotFoundException e) {
@@ -81,8 +81,10 @@ public class Assignments extends PrivateServlet {
     }
 
     private String makeAssignment(ResultSet result) throws SQLException {
-        return "<button onclick='window.location = \"/assignment?assignmentID=" +
-             result.getInt("id") + "\"'>" + result.getString("name") + "</button><br><br>\n";
+        return "<tr><td><button onclick='window.location = \"/assignment?assignmentID="
+             + result.getInt("id") + "\"'>" + result.getString("name") + "</button></td>\n"
+             + "<td><button style='background-color:#FF6060' onclick='deleteAssignment(\""
+             + result.getString("name") + "\", " + result.getInt("id") + ")'>x</button></td></tr>\n";
     }
 
     /**

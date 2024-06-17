@@ -18,12 +18,18 @@
         <h1><%=request.getAttribute("name")%></h1>
         <form action="/save-student" method="post" style="display:inline-block">
             <div align="left" class="container">
+                <h3 align="left">General Notes:</h3>
+                <input class="bordered" 
+                       type="text" 
+                       name="notes" 
+                       value="<%=request.getAttribute("notes")%>" 
+                       onkeyup="resizeInput(this)"><br>
                 <%=request.getAttribute("rows")%>
             </div>
-            <button class="important-button" type="submit">Save</button>
-            <button class="important-button" type="submit" name="download">Download this table</button>
+            <button class="important-button" onclick="isSaved = true" type="submit">Save</button>
+            <button class="important-button" onclick="isSaved = true" type="submit" name="download">Download this table</button>
         </form>
-    </center>   
+    </center>
     <script>
         var isSaved = true;
         

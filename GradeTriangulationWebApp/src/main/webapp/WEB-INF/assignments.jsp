@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html id="html">
-    <link rel="stylesheet" href="/styles/generic.css" type="text/css">
+    <link rel="stylesheet" href="/styles/assignments.css" type="text/css">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><%=request.getAttribute("courseCode")%> - Assignments</title>
@@ -16,10 +16,14 @@
         <script src="/scripts/topnav.js"></script>
     <center>
         <h1><%=request.getAttribute("courseCode")%></h1>
-        <div class="assignments">
-            <%=request.getAttribute("assignments")%>
-        </div>
+        <%=request.getAttribute("assignments")%>
         <%=request.getAttribute("newButton")%>
     </center>
+    <script>
+        function deleteAssignment(name, id) {
+             if (window.confirm("Are you sure you want to delete " + name + "?"))
+                 window.location = "/delete-assignment?id=" + id;
+        }
+    </script>
     </body>
 </html>

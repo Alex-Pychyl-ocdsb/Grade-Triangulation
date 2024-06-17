@@ -30,6 +30,11 @@ input[type="text"], input[type="number"] {
     color: white;
 }
 
+input[type="text"].bordered {
+    border: 1px solid #cccccc;
+    float: left;
+}
+
 .important-button,
 .darktheme .important-button {
     margin: 10px 0;

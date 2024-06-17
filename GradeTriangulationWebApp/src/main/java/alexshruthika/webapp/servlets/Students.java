@@ -57,7 +57,7 @@ public class Students extends PrivateServlet {
             request.setAttribute("courseCode", result.getString("course_code"));
         
             // get students
-            String students = "<table style='border-collapse:separate;table-layout:auto;border-spacing:10px'>";
+            String students = "<table>";
             st = con.prepareStatement(
             "select * from students where student_class_id=?");
             st.setInt(1, classID);
@@ -65,7 +65,7 @@ public class Students extends PrivateServlet {
             while (result.next()) {
                 students += makeStudent(result);
             }
-            if (students.isEmpty()) {
+            if (students.equals("<table>")) {
                 students = "</table>You do not have any students. <button class=\"important-button\" onclick='window.location = \"/new-student\"'>Add some now.</button>";
             } else {
                 students += "</table><button class=\"important-button\" onclick='window.location = \"/new-student\"'>Add a student</button>";

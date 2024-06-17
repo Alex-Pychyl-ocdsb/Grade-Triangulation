@@ -49,11 +49,14 @@ public class Student extends PrivateServlet {
         
         try (Connection con = DatabaseConnection.init()) {
             PreparedStatement st = con.prepareStatement(
-            "select first_name, last_name from students where id=?");
+            "select first_name, last_name, notes from students where id=?");
             st.setInt(1, studentID);
             ResultSet result = st.executeQuery();
             result.next();
+            // fill name input
             request.setAttribute("name", result.getString(1) + " " + result.getString(2));
+            // fill notes input
+            request.setAttribute("notes", (result.getString(3) == null ? "" : result.getString(3)));
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("Error: " + e);
         }

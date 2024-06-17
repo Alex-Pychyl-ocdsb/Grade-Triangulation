@@ -53,6 +53,10 @@
         <servlet-class>alexshruthika.webapp.servlets.DeleteStudent</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>DeleteAssignment</servlet-name>
+        <servlet-class>alexshruthika.webapp.servlets.DeleteAssignment</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DownloadAssignment</servlet-name>
         <servlet-class>alexshruthika.webapp.servlets.DownloadAssignment</servlet-class>
     </servlet>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>DeleteStudent</servlet-name>
         <url-pattern>/delete-student</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAssignment</servlet-name>
+        <url-pattern>/delete-assignment</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DownloadAssignment</servlet-name>

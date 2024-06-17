@@ -71,7 +71,6 @@ public class DownloadAssignment extends PrivateServlet {
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("Error: " + e);
         }
-        response.sendRedirect("/assignment");
     }
 
     /**

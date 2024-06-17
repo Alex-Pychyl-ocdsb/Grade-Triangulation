@@ -23,8 +23,8 @@
                 </tr>
                 <%=request.getAttribute("rows")%>
             </table>
-        <button type="submit" class="important-button">Save</button>
-        <button type="submit" name="download" class="important-button">Download this table</button>
+        <button type="submit" onclick="isSaved = true" class="important-button">Save</button>
+        <button type="submit" onclick="isSaved = true" name="download" class="important-button">Download this table</button>
         </form>
     </center>
     <script>
