@@ -150,10 +150,10 @@ public class Assignment extends PrivateServlet {
                 continue;
             }
             // if type is percent, make number from 0-100
-            if (types.get(criteriaTypes[i])[0].equals("////percentage////")) {
+            if (types.get(criteriaTypes[i])[0].equals("////number////")) {
                 out += "<td style='max-width:100%;white-space:nowrap'>"
                     + "<input name='" + studentID + "_" + i + "' type='number'"
-                    + " min='0' max='100' size='7' onkeydown='isSaved = false'"
+                    + " size='7' onkeydown='isSaved = false'"
                     + " class='value' value='" + values[i] + "'></td>\n";
                 continue;
             }

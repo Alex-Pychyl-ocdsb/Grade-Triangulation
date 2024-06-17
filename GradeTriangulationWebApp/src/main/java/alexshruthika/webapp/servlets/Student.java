@@ -129,10 +129,10 @@ public class Student extends PrivateServlet {
                 continue;
             }
             // if type is percent, make number from 0-100
-            if (types.get(criteriaTypes[i])[0].equals("////percentage////")) {
+            if (types.get(criteriaTypes[i])[0].equals("////number////")) {
                 out += "<td style=\"white-space:nowrap\">"
                     + "<input name=\"" + assignmentID + "_" + i + "\" type=\"number\""
-                    + " min=\"0\" max=\"100\" class=\"value\" value=\""
+                    + " class=\"value\" value=\""
                     + value + "\" size='7' onkeydown='isSaved = false'></td>\n";
                 continue;
             }
