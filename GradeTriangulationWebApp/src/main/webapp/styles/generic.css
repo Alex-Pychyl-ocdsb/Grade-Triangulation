@@ -116,8 +116,11 @@ input[type="submit"].important-button,
     color: white;
 }
 
-.important-button:hover, input[type="submit"].important-button:hover {
-    background-color: #0056b3;
+.important-button:hover, 
+input[type="submit"].important-button:hover
+.darktheme .important-button:hover, 
+.darktheme input[type="submit"].important-button:hover {
+    background-color: #0056b3 !important;
 }
 
 table {

@@ -33,6 +33,7 @@ input[type="text"], input[type="number"] {
     color: white;
 }
 
-.important-button {
+.important-button,
+.darktheme .important-button {
     margin: 10px 0;
 }

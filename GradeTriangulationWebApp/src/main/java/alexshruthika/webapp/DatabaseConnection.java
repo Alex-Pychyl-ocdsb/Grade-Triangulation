@@ -20,7 +20,7 @@ public class DatabaseConnection {
 //                "jdbc:mysql://localhost:3006/gradetriangulation"
 //              , "root"
 //              , "admin");
-        // connection to debian mysql server
+        // connection to debian mariadb server
         Class.forName("org.mariadb.jdbc.Driver");
         return DriverManager.getConnection(
                 "jdbc:mariadb://localhost:3306/gradetriangulation"
