@@ -43,10 +43,24 @@ public class DownloadAssignment extends PrivateServlet {
         try (Connection con = DatabaseConnection.init();
              PrintWriter out = response.getWriter()) {
             String value;
-            PreparedStatement st = con.prepareStatement(
-            "select * from assignment" + assignmentID);
-            ResultSet assignment = st.executeQuery();
+            ResultSet assignment;
             ResultSet studentName;
+            
+            // get name of assignment
+            PreparedStatement st = con.prepareStatement(
+            "select name from assignments where id=?");
+            st.setInt(1, assignmentID);
+            assignment = st.executeQuery();
+            assignment.next();
+            response.setHeader("Content-Disposition", "attachment; filename="
+            + assignment.getString(1).replace(".", "_").replace(",", "_") + ".csv");
+            
+            // get asisgnment data
+            st = con.prepareStatement(
+            "select * from assignment" + assignmentID);
+            assignment = st.executeQuery();
+            
+            // get student names and put with data in file
             st = con.prepareStatement(
             "select first_name, last_name from students where id=?");
             out.print("Student");
